@@ -10,4 +10,7 @@ phases:
       - npm run build --configuration production
   post_build:
     commands:
-      - aws s3 sync dist/epam-interview/browser s3://epam-interview-bucket --delete
+      - aws s3 sync dist/epam-interview s3://epam-interview-bucket --delete
+artifacts:
+  files:
+    - '**/*'
