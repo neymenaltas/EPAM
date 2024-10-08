@@ -7,7 +7,7 @@ phases:
       - npm install # Projenin bağımlılıklarını yükle
   build:
     commands:
-      - npm run build --configuration production # Uygulamanızı üretim modunda derleyin
+      - npm run build -- --configuration production
   post_build:
     commands:
       - aws s3 sync dist/epam-interview/browser s3://epam-interview-bucket --delete # Build sonucunu S3'e yükleyin
