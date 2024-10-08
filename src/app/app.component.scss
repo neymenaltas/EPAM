@@ -1,7 +1,89 @@
+host {
+  height: 100%;
+}
+
 canvas {
   display: block;
   position: fixed;
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+h3 {
+  color: navajowhite;
+}
+
+ul {
+  padding-left: 20px; /* Listeyi biraz içeri alır */
+  list-style: none; /* Varsayılan madde işaretlerini kaldırır */
+}
+
+ul li {
+  position: relative;
+  margin-bottom: 15px; /* Elemanlar arasındaki boşluk */
+  padding-left: 14px; /* Madde işaretine alan açmak için padding */
+  font-size: 1.1em; /* Yazı boyutunu biraz büyütür */
+  font-family: 'Arial', sans-serif; /* Modern bir yazı tipi */
+  line-height: 1.2; /* Yazıların satır aralığını genişletir */
+  color: #333; /* Yazı rengi */
+  word-break: break-word;
+}
+
+ul li:before {
+  content: '•'; /* Madde işareti olarak nokta ekler */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #2ecc71; /* Noktanın rengi */
+  font-size: 1.0em; /* Noktanın boyutu */
+  font-weight: bold; /* Noktayı kalın yapar */
+}
+
+ul li:hover {
+  color: #2ecc71; /* Hover sırasında yazı rengini değiştirir */
+  transition: color 0.3s ease; /* Geçiş efektini ekler */
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: rgba(128, 128, 128, 0.7);
+  @media (max-width: 500px) {
+    flex-direction: column;
+  }
+
+  @media (min-width: 501px) {
+    flex-direction: row;
+  }
+
+  .image-container {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+
+    .image {
+      object-fit: scale-down;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .text-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .first-section, .second-section {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+
+  }
 }

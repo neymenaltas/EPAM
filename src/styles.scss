@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+app-root {
+  height: 100%;
+}
+
+html, body {
+  @media (min-width: 501px) {
+    height: 100%;
+    margin: 0;
+  }
+  @media (max-width: 500px) {
+    margin: 0;
+  }
+}
