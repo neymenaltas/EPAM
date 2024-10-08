@@ -2,15 +2,12 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      nodejs: 18
     commands:
-      - curl -sL https://rpm.nodesource.com/setup_18.x | bash -
-      - yum install -y nodejs
+      - npm install -g npm@latest # NPM'nin en son sürümünü yükle
+      - npm install # Projenin bağımlılıklarını yükle
   build:
     commands:
-      - npm install
-      - npm run build --configuration production
+      - npm run build --configuration production # Uygulamanızı üretim modunda derleyin
   post_build:
     commands:
-      - aws s3 sync dist/epam-interview/browser s3://epam-interview-bucket --delete
+      - aws s3 sync dist/epam-interview/browser s3://epam-interview-bucket --delete # Build sonucunu S3'e yükleyin
